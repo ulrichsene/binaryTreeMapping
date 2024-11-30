@@ -13,9 +13,10 @@ private:
         struct Dam {
             string name;
             int capacity;
+            Dam* nextPtr;
         };
         
-        Dam* headDam;
+        Dam* headPtr;
     };
 
     Tributary* headPtr;
