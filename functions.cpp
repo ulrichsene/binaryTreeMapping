@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-void RiverTree::insert(Tributary trib) {
+void RiverTree::insert(Node node) {
 
 }
 

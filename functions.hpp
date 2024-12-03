@@ -4,31 +4,31 @@ using namespace std;
 
 class RiverTree {
 private:
-    struct Tributary {
+    struct Node {
         string name;
-        double length;
-        Tributary* left_child;
-        Tributary* right_child;
-
-        struct Dam {
-            string name;
-            int capacity;
-            Dam* nextPtr;
-        };
-        
-        Dam* headPtr;
+        Node* left_child;
+        Node* right_child;
     };
 
-    Tributary* headPtr;
+    struct Tributary : Node {
+        double length;
+        double basin_size;
+        double average_discharge;
+    };
+    
+    struct Dam : Node {
+        int height;
+        int capacity;
+    };
 
+    Node* headPtr;
     
 public:
     RiverTree() {
         headPtr = nullptr;
-    
     };
 
-    void insert(Tributary trib);
+    void insert(Node node);
 
     void traverse();
 
