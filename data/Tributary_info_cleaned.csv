@@ -1,0 +1,74 @@
+Name,Left/Right,Length(km),Basin size(km2),Average discharge(m3/s),Parent River,IsParent
+Youngs,Left,43,257.6,14.7,Columbia,Yes
+Grays,Right,48,320,15.9,Columbia,No
+Elochoman,Right,24,490,10.8,Columbia,No
+Clatskanie,Left,40,269.2,10.6,Columbia,No
+Cowlitz,Right,169,"6,698",286.6,Columbia,Yes
+Kalama,Right,72,530,34.5,Columbia
+Lewis,Right,153,"2,709",173.4,Columbia
+Lake,Right,18,260,,Columbia
+Willamette,Left,301,"28,949","1,098.7",Columbia
+Washougal,Right,53,550,24.7,Columbia
+Sandy,Left,92,"1,316",65,Columbia
+Wind,Right,48,580,34.2,Columbia
+Little White Salmon,Right,31,350,,Columbia
+White Salmon,Right,71.3,"1,000",30.4,Columbia
+Hood,Left,40,720,27.6,Columbia
+Klickitat,Right,154.3,"3,496",44.5,Columbia
+Fifteenmile Creek,Left,87,970,5.6,Columbia
+Deschutes,Left,406,"27,549.6",215.7,Columbia
+John Day,Left,457,"20,521.3",80.4,Columbia
+Willow Creek,Left,127,"2,300",0.9,Columbia
+Umatilla,Left,143,"6,345",14,Columbia
+Walla Walla,Left,98,"4,553",34.3,Columbia
+Snake,Left,"1,735","260,938.7","1,755.6",Columbia
+Yakima,Right,344,"15,930.4",100.3,Columbia
+Crab Creek,Left,262,"13,200",40.4,Columbia
+Wenatchee,Right,85,"3,473.1",103.7,Columbia
+Entiat,Right,92,"1,210",20.2,Columbia
+Chelan,Right,6.6,"2,390",57.8,Columbia
+Methow,Right,129,"4,727",44.4,Columbia
+Okanogan,Right,185,"21,385.7",99,Columbia
+Nespelem,Right,,580.8,2.5,Columbia
+Sanpoil,Right,95,"2,540",11.4,Columbia
+Spokane,Left,179,"17,353.4",228.6,Columbia
+Colville,Left,97,"2,646.8",16.4,Columbia
+Kettle,Right,282,"10,877",82.3,Columbia
+Pend Oreille,Left,771,"67,055.5",850.2,Columbia
+Kootenay,Left,780,"50,298",868,Columbia
+Whatshan,Right,,581.4,12,Columbia
+Mosquito Creek,Right,,435,10.2,Columbia
+Kuskanax Creek,Left,,350.9,10.6,Columbia
+Halfway,Left,,447.4,14.2,Columbia
+Incomappleux,Left,,"1,020",55.8,Columbia
+Akolkolex,Left,,388.7,16.5,Columbia
+Illecillewaet,Left,62,"1,213.3",61.4,Columbia
+Jordan,Right,,345.6,11.1,Columbia
+Downie Creek,Left,,655.8,27.9,Columbia
+Goldstream,Left,,954.4,39.5,Columbia
+Big Mouth Creek,Left,,591.2,22.9,Columbia
+Canoe,Right,,712.6,15.2,Columbia
+Wood,Right,,841.7,18.1,Columbia
+Cummins,Right,,262.6,8.5,Columbia
+Kinbasket,Right,,261.3,7.6,Columbia
+Windy,Left,,252.3,10.2,Columbia
+Sullivan,Right,,632.5,18.9,Columbia
+Bush,Right,,"1,100.1",25.5,Columbia
+Gold,Left,,566.4,27.9,Columbia
+Beaver,Left,,"1,163",54.3,Columbia
+Bluewater,Right,,392.5,12.5,Columbia
+Waitabit Creek,Right,,352.2,9.6,Columbia
+Blaeberry,Right,60,745.6,17.8,Columbia
+Kicking Horse,Right,,"1,815.4",40.9,Columbia
+Canyon Creek,Left,,161.7,4.9,Columbia
+Spillimacheen,Left,118,"1,456.2",38,Columbia
+Bugaboo Creek,Left,,368.4,7.3,Columbia
+Forster Creek,Left,,592.4,8.8,Columbia
+Horsethief Creek,Left,,630.5,10,Columbia
+Toby Creek,Left,,673.5,9,Columbia
+Dutch Creek,Left,,676.5,7.9,Columbia
+Lewis and Clark River,Right,32,160,,Youngs,No
+Wallooskee River,Left,16,,,Youngs,No
+Klaskanine River,Left,26,,,Youngs,No
+Coweeman River,Right,58,520,,Cowlitz,No
+
