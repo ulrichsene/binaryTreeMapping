@@ -22,7 +22,7 @@ Willow Creek,Right,127,"2,300",0.9,Columbia,No
 Umatilla,Right,143,"6,345",14,Columbia,No
 Walla Walla,Right,98,"4,553",34.3,Columbia,No
 Snake,Right,"1,735","260,938.7","1,755.6",Columbia,Yes
-Yakima,Left,344,"15,930.4",100.3,Columbia,No
+Yakima,Left,344,"15,930.4",100.3,Columbia,Yes
 Crab Creek,Right,262,"13,200",40.4,Columbia,No
 Wenatchee,Left,85,"3,473.1",103.7,Columbia,No
 Entiat,Left,92,"1,210",20.2,Columbia,No
@@ -34,7 +34,7 @@ Sanpoil,Left,95,"2,540",11.4,Columbia,No
 Spokane,Right,179,"17,353.4",228.6,Columbia,No
 Colville,Right,97,"2,646.8",16.4,Columbia,No
 Kettle,Left,282,"10,877",82.3,Columbia,No
-Pend Oreille,Right,771,"67,055.5",850.2,Columbia,No
+Pend Oreille,Right,771,"67,055.5",850.2,Columbia,Yes
 Kootenay,Right,780,"50,298",868,Columbia,No
 Whatshan,Left,,581.4,12,Columbia,No
 Mosquito Creek,Left,,435,10.2,Columbia,No
@@ -77,6 +77,10 @@ Oak Grove Fork,Left,34,320,13.8,Clackamas,No
 Collawash,Right,19,390,,Clackamas,No
 Tualatin,Right,184,"1,840",41.5,Willamette,No 
 Yamhill,Right,18,"2,170",,Willamette,No
+Santiam,Left,19,"4,700",218.4,Willamette,No
+Calapooia,Left,130,970,25.4,Willamette,No
+McKenzie,Left,140,"3,400",167.2,Willamette,No
+Coast Fork,Right,64,"1,720",44.1,Willamette,No
 Palouse,Left,267.9,"8,610",17.0,Snake,No
 Clearwater,Left,319.2,"24,420",420.8,Snake,No
 Grande Ronde,Right,338.7,"10,710",85.7,Snake,Yes
@@ -96,3 +100,5 @@ West Little Owyhee,Right,101,800,0.51,Owyhee,No
 South Fork Malheur,Left,,,,Malheur,No 
 Wallowa,Left,89,"2,500",17,Grande Ronde,No
 Fall,Right,103,,,Henrys Fork,No
+Flathead,Left,254,"22,780",322,Pend Oreille,No
+Cle Elum,Right,45,,26.8,Yakima,No
