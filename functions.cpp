@@ -50,7 +50,7 @@ void RiverTree::traverseHelper(Node* node) {
 
 
 void RiverTree::printAll() {
-
+// bob 
 }
 
 void RiverTree::subPrint(string name) {
