@@ -5,20 +5,25 @@ using namespace std;
 class RiverTree {
 private:
     struct Node {
+        int type;
         string name;
         Node* left_child;
         Node* right_child;
     };
 
-    struct Tributary : Node {
+    struct Tributary : public Node {
         double length;
         double basin_size;
         double average_discharge;
     };
     
-    struct Dam : Node {
-        int height;
+    struct Dam : public Node {
+        double height;
         int capacity;
+    };
+
+    struct Columbia : public Node {
+        double data;
     };
 
     Node* headPtr;
@@ -28,12 +33,15 @@ public:
         headPtr = nullptr;
     };
 
-    void insert(Node node);
+    Node* RiverTree::getHeadPtr();
+
+    void insert(Node* child, int type, string label, double data);
 
     void traverse();
     void traverseHelper(Node* node);
 
     void printAll();
+    void printAllHelper(Node* node);
 
     void subPrint(string name);
 
