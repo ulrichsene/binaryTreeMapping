@@ -1,5 +1,9 @@
 #include "functions.hpp"
 
+Node* RiverTree::getHeadPtr() {
+    return headPtr;
+}
+
 void RiverTree::insert(Node* child, int type, string label, double data) {
     // Create a new node based on the type
     Node* newNode = nullptr;
@@ -112,8 +116,4 @@ void RiverTree::subPrint(string name) {
 
 void RiverTree::del(string name) {
 
-}
-
-Node* RiverTree::getHeadPtr() {
-    return headPtr;
 }

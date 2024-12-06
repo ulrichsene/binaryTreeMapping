@@ -33,7 +33,7 @@ public:
         headPtr = nullptr;
     };
 
-    Node* RiverTree::getHeadPtr();
+    Node* getHeadPtr();
 
     void insert(Node* child, int type, string label, double data);
 
