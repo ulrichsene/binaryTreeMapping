@@ -36,8 +36,18 @@ void RiverTree::insert(Node node) {
 }
 
 void RiverTree::traverse() {
-
+   traverseHelper(headPtr);
 }
+
+void RiverTree::traverseHelper(Node* node) {
+   if (node == nullptr) return;
+
+
+   traverseHelper(node->left_child);  // Visit left subtree
+   std::cout << node->name << std::endl;  // Process current node
+   traverseHelper(node->right_child);  // Visit right subtree
+}
+
 
 void RiverTree::printAll() {
 

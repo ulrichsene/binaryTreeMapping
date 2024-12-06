@@ -31,6 +31,7 @@ public:
     void insert(Node node);
 
     void traverse();
+    void traverseHelper(Node* node);
 
     void printAll();
 
