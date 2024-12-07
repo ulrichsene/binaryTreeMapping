@@ -111,9 +111,40 @@ void RiverTree::printAllHelper(Node* node) {
 
 
 void RiverTree::subPrint(string name) {
-
+    Node* target = nullptr; // variable for target node
+    subPrintHelper(headPtr, name, target);
+    if (target) {
+        printAllHelper(target);
+    } else {
+        cout << "The target node was not found within the tree" << endl;
+    }
 }
 
+void RiverTree::subPrintHelper(Node* root, string& name, Node*& target) {
+    if (root == nullptr || target != nullptr) {
+        return; // stops when target is found
+    }
+
+    if (root->name == name) {
+        target = root; // node has been found
+        return;
+    }
+
+    // Recursively search in the left and right subtrees
+    subPrintHelper(root->left_child, name, target);
+    subPrintHelper(root->right_child, name, target);
+}
+
+// find target node using subPrintHelper
 void RiverTree::del(string name) {
+Node* target = nullptr; // variable for target node to delete 
+subPrintHelper(headPtr, name, target);
+if (target == nullptr) {
+    cout << "The target node was not found within the tree" << endl;
+} else {
+// delete node
+}
+
 
 }
+

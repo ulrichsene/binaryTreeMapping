@@ -43,6 +43,7 @@ public:
     void printAllHelper(Node* node);
 
     void subPrint(string name);
+    void subPrintHelper(Node* root, string& name, Node*& target);
 
     void del(string name);
 };
