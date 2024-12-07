@@ -1,14 +1,20 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
 using namespace std;
 
 class RiverTree {
-public:
+private:
     struct Node {
         int type;
         string name;
         Node* left_child;
         Node* right_child;
+
+        double data1;
+        double data2;
+        double data3;
     };
 
     struct Tributary : public Node {
@@ -19,22 +25,27 @@ public:
     
     struct Dam : public Node {
         double height;
-        int capacity;
+        double capacity;
     };
 
     struct Columbia : public Node {
         double data;
     };
 
+    Node* search(Node* node, const string& name);
+
     Node* headPtr;
+
+public:
     
     RiverTree() {
         headPtr = nullptr;
     };
 
-    Node* getHeadPtr();
+    Node*& getHeadPtr();
 
-    void insert(Node* child, int type, string label, double data);
+    void insert(Node* child, int type, string label, const vector<double>& data);
+    void insertByName(const string& parentName, int type, const string& label, const vector<double>& data, bool isLeft);
 
     void traverse();
     void traverseHelper(Node* node);
