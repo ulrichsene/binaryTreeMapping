@@ -135,16 +135,4 @@ void RiverTree::subPrintHelper(Node* root, string& name, Node*& target) {
     subPrintHelper(root->right_child, name, target);
 }
 
-// find target node using subPrintHelper
-void RiverTree::del(string name) {
-Node* target = nullptr; // variable for target node to delete 
-subPrintHelper(headPtr, name, target);
-if (target == nullptr) {
-    cout << "The target node was not found within the tree" << endl;
-} else {
-// delete node
-}
-
-
-}
 
