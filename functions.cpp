@@ -1,6 +1,6 @@
 #include "functions.hpp"
 
-Node* RiverTree::getHeadPtr() {
+RiverTree::Node *RiverTree::getHeadPtr() {
     return headPtr;
 }
 

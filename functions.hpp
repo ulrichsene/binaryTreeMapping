@@ -3,7 +3,7 @@
 using namespace std;
 
 class RiverTree {
-private:
+public:
     struct Node {
         int type;
         string name;
@@ -28,7 +28,6 @@ private:
 
     Node* headPtr;
     
-public:
     RiverTree() {
         headPtr = nullptr;
     };
