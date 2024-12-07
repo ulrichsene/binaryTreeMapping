@@ -1,38 +1,56 @@
 #include "functions.hpp"
+#include <vector>
 
-RiverTree::Node *RiverTree::getHeadPtr() {
+RiverTree::Node*& RiverTree::getHeadPtr() {
     return headPtr;
 }
 
-void RiverTree::insert(Node* child, int type, string label, double data) {
-    // Create a new node based on the type
+RiverTree::Node* RiverTree::search(Node* node, const string& name) {
+    if (node == nullptr || node->name == name) {
+        return node; // Return if node is found or if tree traversal ends
+    }
+
+    // Search left and right subtrees
+    Node* found = search(node->left_child, name);
+    if (found == nullptr) {
+        found = search(node->right_child, name);
+    }
+    return found;
+}
+
+void RiverTree::insert(Node* child, int type, string label, const vector<double>& data) {
     Node* newNode = nullptr;
-    if (type == 0) {
+
+    if (type == 0) { // Columbia
         Columbia* columbiaNode = new Columbia();
-        columbiaNode->data = data;
+        columbiaNode->data = data[0];
+        columbiaNode->type = 0;  // Set the type explicitly
         newNode = columbiaNode;
-    } else if (type == 1) {
+    } else if (type == 1) { // Tributary
         Tributary* tributaryNode = new Tributary();
-        tributaryNode->length = data;
+        tributaryNode->length = data[0];
+        tributaryNode->basin_size = data[1];
+        tributaryNode->average_discharge = data[2];
+        tributaryNode->type = 1;  // Set the type explicitly
         newNode = tributaryNode;
-    } else if (type == 2) {
+    } else if (type == 2) { // Dam
         Dam* damNode = new Dam();
-        damNode->height = data;
+        damNode->height = data[0];
+        damNode->capacity = static_cast<int>(data[1]);
+        damNode->type = 2;  // Set the type explicitly
         newNode = damNode;
     }
 
-    // Set the common attributes for the new node
     newNode->name = label;
     newNode->left_child = nullptr;
     newNode->right_child = nullptr;
 
-    // If the tree is empty, set the new node as the head
+    // Insertion logic remains unchanged...
     if (headPtr == nullptr) {
         headPtr = newNode;
         return;
     }
 
-    // Traverse the tree to find the insertion point
     Node* current = headPtr;
     Node* parent = nullptr;
 
@@ -46,11 +64,24 @@ void RiverTree::insert(Node* child, int type, string label, double data) {
         }
     }
 
-    // Use the `child` parameter to determine the direction of insertion
     if (child == parent->left_child) {
         parent->left_child = newNode;
     } else if (child == parent->right_child) {
         parent->right_child = newNode;
+    }
+}
+
+void RiverTree::insertByName(const string& parentName, int type, const string& label, const vector<double>& data, bool asLeft) {
+    Node* parent = search(headPtr, parentName);
+    if (parent == nullptr) {
+        cout << "Parent node not found!" << endl;
+        return;
+    }
+
+    if (asLeft) {
+        insert(parent->left_child, type, label, data);
+    } else {
+        insert(parent->right_child, type, label, data);
     }
 }
 
@@ -74,13 +105,11 @@ void RiverTree::printAll() {
 
 void RiverTree::printAllHelper(Node* node) {
     if (node == nullptr) {
-        return; // Base case: stop if the node is null
+        return;
     }
 
-    // Print the common node details
     cout << "Name: " << node->name << endl;
 
-    // Use the `type` field to determine the type of the node and print details
     switch (node->type) {
         case 0: { // Columbia
             Columbia* columbiaNode = static_cast<Columbia*>(node);
@@ -104,9 +133,8 @@ void RiverTree::printAllHelper(Node* node) {
             cout << "Unknown node type!" << endl;
     }
 
-    // Recursively print left and right subtrees
-    printAllHelper(node->left_child);  // Traverse left
-    printAllHelper(node->right_child); // Traverse right
+    printAllHelper(node->left_child);
+    printAllHelper(node->right_child);
 }
 
 
@@ -135,4 +163,16 @@ void RiverTree::subPrintHelper(Node* root, string& name, Node*& target) {
     subPrintHelper(root->right_child, name, target);
 }
 
+// find target node using subPrintHelper
+void RiverTree::del(string name) {
+Node* target = nullptr; // variable for target node to delete 
+subPrintHelper(headPtr, name, target);
+if (target == nullptr) {
+    cout << "The target node was not found within the tree" << endl;
+} else {
+// delete node
+}
+
+
+}
 
