@@ -29,6 +29,7 @@ int main() {
                 columbia.printAll();
                 break;
             case 2:
+                columbia.traverse();
                 break;
             case 3:
                 cout << "Enter the name of the river portion you'd like to search for: ";

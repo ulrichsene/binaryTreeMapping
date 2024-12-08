@@ -90,18 +90,25 @@ void RiverTree::insertByName(const string& parentName, int type, const string& l
     }
 }
 
-// void RiverTree::traverse() {
-//    traverseHelper(headPtr);
-// }
+void RiverTree::traverse() {
+    traverseHelper(headPtr);
+}
 
-// void RiverTree::traverseHelper(Node* node) {
-//    if (node == nullptr) return;
+void RiverTree::traverseHelper(Node* node) {
+    if (node == nullptr) return;
 
+    std::cout << node->name << std::endl;  // Process current node
 
-//    traverseHelper(node->left_child);  // Visit left subtree
-//    std::cout << node->name << std::endl;  // Process current node
-//    traverseHelper(node->right_child);  // Visit right subtree
-// }
+    char choice;
+    cout << "Countinue down river? (y/n) ";
+    cin >> choice;
+
+    if (choice == 'y' || choice == 'Y') {
+        traverseHelper(node->left_child);  // Visit left subtree
+        traverseHelper(node->right_child);  // Visit right subtree
+    }
+    return;
+}
 
 
 void RiverTree::printAll() {
