@@ -6,7 +6,7 @@ RiverTree::Node*& RiverTree::getHeadPtr() {
 }
 
 RiverTree::Node* RiverTree::search(Node* node, const string& name) {
-    if (node == nullptr || node->name == name) {
+    /* if (node == nullptr || node->name == name) {
         return node;
     }
 
@@ -15,7 +15,21 @@ RiverTree::Node* RiverTree::search(Node* node, const string& name) {
     if (found == nullptr) {
         found = search(node->right_child, name);
     }
-    return found;
+    return found; */
+
+    if (node == nullptr) {
+        return node;
+    }
+
+    if (node->left_child && node->left_child->name == name) {
+        node = search(node->left_child, name);
+        return node;
+    } else if (node->right_child && node->right_child->name == name) {
+        node = search(node->right_child, name);
+        return node;
+    } else {
+        return node;
+    }
 }
 
 void RiverTree::insert(Node* parent, bool isLeftChild, int type, string label, vector<double> data) {
