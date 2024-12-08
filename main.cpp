@@ -163,4 +163,6 @@ void insertAllData(RiverTree& columbia) {
 
         columbia.insertByName(parent, type, label, data, asLeft);
     }
+
+    columbia.printAll();
 }
