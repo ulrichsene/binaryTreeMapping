@@ -58,3 +58,5 @@ public:
 
     void del(string name);
 };
+
+void insertAllData(RiverTree& columbia);
