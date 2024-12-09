@@ -61,7 +61,7 @@ void RiverTree::insert(Node* parent, bool isLeftChild, int type, string label, v
     newNode->left_child = nullptr;
     newNode->right_child = nullptr;
 
-    cout << "Inserting node: " << label << " with type " << type << endl;
+    // cout << "Inserting node: " << label << " with type " << type << endl;
 
     // If tree is empty, set the new node as headPtr
     if (headPtr == nullptr) {
@@ -127,23 +127,20 @@ void RiverTree::printAllHelper(Node* node, Node* parent) {
     switch (node->type) {
         case 0: { // Columbia = 0
             Columbia* columbiaNode = static_cast<Columbia*>(node);
-            cout << "Type: Columbia, Data: {" << columbiaNode->data << "}, Root: " 
-                 << (parent == nullptr ? "true" : "false") << endl;
+            cout << "Type: Columbia, Data: " << columbiaNode->data << endl;
             break;
         }
         case 1: { // Tributary = 1
             Tributary* tributaryNode = static_cast<Tributary*>(node);
             cout << "Type: Tributary, Length: " << tributaryNode->length
                  << ", Basin Size: " << tributaryNode->basin_size
-                 << ", Average Discharge: " << tributaryNode->average_discharge
-                 << ", Root: " << (parent == nullptr ? "true" : "false") << endl;
+                 << ", Average Discharge: " << tributaryNode->average_discharge << endl;
             break;
         }
         case 2: { // Dam = 2
             Dam* damNode = static_cast<Dam*>(node);
             cout << "Type: Dam, Height: " << damNode->height
-                 << ", Capacity: " << damNode->capacity
-                 << ", Root: " << (parent == nullptr ? "true" : "false") << endl;
+                 << ", Capacity: " << damNode->capacity << endl;
             break;
         }
         default:
@@ -317,7 +314,21 @@ void insertAllData(RiverTree& columbia) {
         {"Columbia", 1, "Toby Creek", {0.0, 673.5, 9.0}, false},
         {"Columbia", 0, "Columbia", {0}, true},
         {"Columbia", 1, "Dutch Creek", {0.0, 676.5, 7.9}, false},
-        {"Columbia", 0, "Columbia", {0}, true}
+        {"Columbia", 0, "Columbia", {0}, true},
+        {"Columbia", 2, "Mica Dam", {240, 2805}, true},
+        {"Columbia", 2, "Revelstoke Dam", {175, 2480}, true},
+        {"Columbia", 2, "Keenleyside Dam", {52, 185}, true},
+        {"Columbia", 2, "Grand Coulee Dam", {170, 6809}, true},
+        {"Columbia", 2, "Chief Joseph Dam", {72, 2620}, true},
+        {"Columbia", 2, "Wells Dam", {49, 840}, true},
+        {"Columbia", 2, "Rocky Reach Dam", {40, 1287}, true},
+        {"Columbia", 2, "Rock Island Dam", {41,660}, true},
+        {"Columbia", 2, "Wanapum Dam", {56, 1092}, true},
+        {"Columbia", 2, "Priest Rapids Dam", {54, 955.6}, true},
+        {"Columbia", 2, "McNary Dam", {56, 1133}, true},
+        {"Columbia", 2, "John Day Dam", {56, 2485}, true},
+        {"Columbia", 2, "The Dalles Dam", {79,2038}, true},
+        {"Columbia", 2, "Bonneville Dam", {60, 1190}, true}
     };
 
     for (size_t i = 0; i < riverData.size(); ++i) {
