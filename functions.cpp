@@ -32,6 +32,28 @@ RiverTree::Node* RiverTree::search(Node* node, const string& name) {
     }
 }
 
+RiverTree::Node* RiverTree::searchDamParent(Node* node, const string& name) {
+    if (node->name == name) {
+        node = descendTrib(node);
+        return node;
+    }
+
+    // Search left and right subtrees
+    Node* found = search(node->left_child, name);
+    if (found == nullptr) {
+        found = search(node->right_child, name);
+    }
+    return descendTrib(found);
+}
+
+RiverTree::Node* RiverTree::descendTrib(Node* node) {
+    while (node->left_child) {
+        node = node->left_child;
+    }
+
+    return node;
+}
+
 void RiverTree::insert(Node* parent, bool isLeftChild, int type, string label, vector<double> data) {
     Node* newNode = nullptr;
 
@@ -79,9 +101,14 @@ void RiverTree::insert(Node* parent, bool isLeftChild, int type, string label, v
     }
 }
 
-
 void RiverTree::insertByName(const string& parentName, int type, const string& label, const vector<double>& data, bool asLeft) {
-    Node* parentNode = search(headPtr, parentName);
+    Node* parentNode;
+    
+    if (type == 2) {
+        parentNode = searchDamParent(headPtr, parentName);
+    } else {
+        parentNode = search(headPtr, parentName);
+    }
 
     if (parentNode || headPtr == nullptr) {
         insert(parentNode, asLeft, type, label, data);
@@ -109,7 +136,6 @@ void RiverTree::traverseHelper(Node* node) {
     }
     return;
 }
-
 
 void RiverTree::printAll() {
     printAllHelper(headPtr, nullptr); // Start from the root node
@@ -315,20 +341,6 @@ void insertAllData(RiverTree& columbia) {
         {"Columbia", 0, "Columbia", {0}, true},
         {"Columbia", 1, "Dutch Creek", {0.0, 676.5, 7.9}, false},
         {"Columbia", 0, "Columbia", {0}, true},
-        {"Columbia", 2, "Mica Dam", {240, 2805}, true},
-        {"Columbia", 2, "Revelstoke Dam", {175, 2480}, true},
-        {"Columbia", 2, "Keenleyside Dam", {52, 185}, true},
-        {"Columbia", 2, "Grand Coulee Dam", {170, 6809}, true},
-        {"Columbia", 2, "Chief Joseph Dam", {72, 2620}, true},
-        {"Columbia", 2, "Wells Dam", {49, 840}, true},
-        {"Columbia", 2, "Rocky Reach Dam", {40, 1287}, true},
-        {"Columbia", 2, "Rock Island Dam", {41,660}, true},
-        {"Columbia", 2, "Wanapum Dam", {56, 1092}, true},
-        {"Columbia", 2, "Priest Rapids Dam", {54, 955.6}, true},
-        {"Columbia", 2, "McNary Dam", {56, 1133}, true},
-        {"Columbia", 2, "John Day Dam", {56, 2485}, true},
-        {"Columbia", 2, "The Dalles Dam", {79, 2038}, true},
-        {"Columbia", 2, "Bonneville Dam", {60, 1190}, true},
         {"Snake", 2, "Jackson Lake Dam", {20, 0}, true},
         {"Snake", 2, "Palisades Dam", {82, 176.6}, true},
         {"Snake", 2, "Gem State Dam", {12, 22.6}, true},
