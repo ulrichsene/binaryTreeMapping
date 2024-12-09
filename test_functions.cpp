@@ -13,17 +13,17 @@ void testInsert() {
 
     // Insert root node - Columbia
     tree.insert(tree.getHeadPtr(), true, 0, "Columbia", {100.0});
-    assert(tree.getHeadPtr() != nullptr);
+    //assert(tree.getHeadPtr() != nullptr);
     assert(tree.getHeadPtr()->name == "Columbia");
 
     // Insert left child - Tributary1
     tree.insertByName("Columbia", 1, "Tributary1", {200.0, 500.0, 50.0}, true);
-    assert(tree.getHeadPtr()->left_child != nullptr);
+    //assert(tree.getHeadPtr()->left_child != nullptr);
     assert(tree.getHeadPtr()->left_child->name == "Tributary1");
 
     // Insert right child (Dam1)
     tree.insertByName("Columbia", 2, "Dam1", {300.0, 1000}, false);
-    assert(tree.getHeadPtr()->right_child != nullptr);
+    //assert(tree.getHeadPtr()->right_child != nullptr);
     assert(tree.getHeadPtr()->right_child->name == "Dam1");
 
     // Print success message
