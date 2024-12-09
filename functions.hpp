@@ -32,8 +32,6 @@ private:
         double data;
     };
 
-    Node* search(Node* node, const string& name);
-
     Node* headPtr;
 
 public:
@@ -44,6 +42,8 @@ public:
 
     Node*& getHeadPtr();
 
+    Node* search(Node* node, const string& name);
+    
     void insert(Node* parent, bool isLeftChild, int type, string label, vector<double> data);
     void insertByName(const string& parentName, int type, const string& label, const vector<double>& data, bool isLeft);
 

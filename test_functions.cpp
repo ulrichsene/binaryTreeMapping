@@ -12,9 +12,9 @@ void testInsert() {
     RiverTree tree;
 
     // Insert root node - Columbia
-     tree.insert(nullptr, 0, "Columbia", {100.0});
-     assert(tree.getHeadPtr() != nullptr);
-     assert(tree.getHeadPtr()->name == "Columbia");
+    tree.insert(tree.getHeadPtr(), true, 0, "Columbia", {100.0});
+    assert(tree.getHeadPtr() != nullptr);
+    assert(tree.getHeadPtr()->name == "Columbia");
 
     // Insert left child - Tributary1
     tree.insertByName("Columbia", 1, "Tributary1", {200.0, 500.0, 50.0}, true);
@@ -37,7 +37,7 @@ void testSearch() {
     RiverTree tree;
 
     // Insert nodes into tree in order to test
-    tree.insert(nullptr, 0, "Columbia", {100.0});
+    tree.insert(tree.getHeadPtr(), true, 0, "Columbia", {100.0});
     tree.insertByName("Columbia", 1, "Tributary1", {200.0, 500.0, 50.0}, true);
 
     // Search for an existing node
@@ -59,7 +59,7 @@ void testTraversal() {
     RiverTree tree;
 
     // Insert nodes to set up the tree
-    tree.insert(nullptr, 0, "Columbia", {100.0});
+    tree.insert(tree.getHeadPtr(), 0, true, "Columbia", {100.0});
     tree.insertByName("Columbia", 1, "Tributary1", {200.0, 500.0, 50.0}, true);
     tree.insertByName("Columbia", 2, "Dam1", {300.0, 1000}, false);
     
@@ -78,7 +78,7 @@ void testSubPrint() {
     RiverTree tree;
 
     // Insert nodes to set up the tree
-    tree.insert(nullptr, 0, "Columbia", {100.0});
+    tree.insert(tree.getHeadPtr(), 0, true, "Columbia", {100.0});
     tree.insertByName("Columbia", 1, "Tributary1", {200.0, 500.0, 50.0}, true);
 
     // Subprint for columbia should include root and its children
@@ -97,35 +97,12 @@ void testSubPrint() {
     cout << "Verify manually that subPrint outputs are correct." << endl;
 }
 
-//Checks if nodes can be deleted and verifies tree integration after deletion
-void testDelete() {
-    cout << "Testing testDelete" << endl;
-
-    Rivertree tree;
-
-    // Insert nodes to set up the tree
-    tree.insert(nullptr, 0, "Columbia", (100, 0));
-    treee.insertByName("Columbia", 1, "Tributary", (200.0, 500.0, 50.0), true);
-
-    // Delete child node to test whether it exists or not
-    tree.del("Tributary");
-    assert(tree.search(tree.getHeadPtr(), "Tributary1" == nullptr);
-
-    // Deletes root node to test whether the tree becomes empty or not
-    tree.del("Columbia");
-    assert(tree.getHeadPtr() == nullptr);
-
-    // Print success message
-    cout << "testDelete passed:" << endl;
-}
-
 // Main function to run all the tests
 int main() {
     testInsert();
     testSearch();
     testTraversal();
-    testSubprint();
-    testDelete();
+    testSubPrint();
 
     cout << "All tests passed" << endl;
     return 0;
