@@ -33,6 +33,9 @@ private:
     };
 
     Node* search(Node* node, const string& name);
+    Node* searchDamParent(Node* node, const string& name);
+
+    Node* descendTrib(Node* node);
 
     Node* headPtr;
 

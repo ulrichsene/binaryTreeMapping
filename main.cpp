@@ -33,7 +33,8 @@ int main() {
                 break;
             case 3:
                 cout << "Enter the name of the river portion you'd like to search for: ";
-                cin >> name;
+                getline(cin, name);
+                getline(cin, name);
                 columbia.subPrint(name);
                 break;
             case 4:

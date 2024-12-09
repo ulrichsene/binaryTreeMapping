@@ -5,6 +5,8 @@
         "string": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "tuple": "cpp",
+        "iostream": "cpp"
     }
 }
