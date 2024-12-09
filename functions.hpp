@@ -44,17 +44,19 @@ public:
 
     Node*& getHeadPtr();
 
-    void insert(Node* child, int type, string label, const vector<double>& data);
+    void insert(Node* parent, bool isLeftChild, int type, string label, vector<double> data);
     void insertByName(const string& parentName, int type, const string& label, const vector<double>& data, bool isLeft);
 
     void traverse();
     void traverseHelper(Node* node);
 
     void printAll();
-    void printAllHelper(Node* node);
+    void printAllHelper(Node* node, Node* parent);
 
     void subPrint(string name);
     void subPrintHelper(Node* root, string& name, Node*& target);
 
     void del(string name);
 };
+
+void insertAllData(RiverTree& columbia);
